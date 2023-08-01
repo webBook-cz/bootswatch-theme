@@ -1,0 +1,9 @@
+name: 'Webbook Bootswatch'
+description: 'Bootstrap 5.3 theme with bootswatch switch and Dark mode'
+author: 'webBook'
+homepage: 'webbook.page'
+authorCode: ''
+code: 'webbook-bootswatch'
+parent: ''
+database: '0'
+form: fields.yaml

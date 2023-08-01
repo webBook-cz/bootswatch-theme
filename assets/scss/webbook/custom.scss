@@ -1,0 +1,22 @@
+body {
+  padding-top: 60px;
+}
+
+.bs-component + .bs-component {
+  margin-top: 1rem;
+}
+
+.bs-docs-section .page-header h1 {
+  padding: 2rem 0;
+  font-size: 3rem;
+}
+
+.bs-component .modal {
+  position: relative;
+  top: auto;
+  right: auto;
+  bottom: auto;
+  left: auto;
+  z-index: 1;
+  display: block;
+}

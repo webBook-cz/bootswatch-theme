@@ -1,0 +1,36 @@
+// Font Awesome demo page styling
+//@import "webbook/fa";
+// Bootstrap icons
+@import "webbook/icons";
+// Local fonts
+// @import "webbook/local-fonts";
+// Dark mode
+//@import "webbook/color-modes";
+// webBook 404 
+//@import "webbook/404";
+// Rainlab Blog plugin styling 
+
+
+//// sticky footer
+body {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  min-height: -webkit-fill-available;
+}
+
+html {
+  height: -webkit-fill-available;
+}
+
+main {
+  flex: 1 0 auto;
+}
+//// sticky footer end
+
+//// header height (space for <main>)
+$header_height: 70px;
+$topbar_height: 44px;
+
+//@import "theme/style";
+@import "webbook/custom";

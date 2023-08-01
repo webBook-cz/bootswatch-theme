@@ -1,0 +1,16 @@
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>{{ this.page.meta_title }} | {{ this.theme.site_title }}</title>
+    {% if this.page.meta_description %}
+    <meta name="description" content="{{ this.page.meta_description }}">
+    {% endif %}
+    {% if this.page.meta_title %}
+    <meta name="title" content="{{ this.page.meta_title }}">
+    {% endif %}
+    {% partial 'site/favicon' %}
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    {% partial 'site/styles' %}
+    {% if this.theme.google_analytics %}
+        {% partial 'site/ga'  trackingID = this.theme.google_analytics %}
+    {% endif %}
+    {{ this.theme.more_analytics }}

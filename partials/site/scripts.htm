@@ -1,0 +1,41 @@
+==
+<?php
+function onStart()
+{
+   $this['vendors'] = Config::get('vendors');
+}
+==
+    <script src="{{ 'assets/js/bootstrap.bundle.min.js'|theme }}"></script>
+    <script src="{{ 'assets/js/bootstrap.main.js'|theme }}"></script>
+
+{% if 'jquery' in vendors %}
+    <script
+        src="https://code.jquery.com/jquery-3.6.0.min.js"
+        integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4="
+        crossorigin="anonymous"></script>
+{% endif %}
+
+{% if 'purecounter' in vendors %}
+    <script src="https://cdn.jsdelivr.net/npm/@srexi/purecounterjs@1.1.1/js/purecounter_vanilla.js"></script>
+{% endif %}
+
+{% if 'swiper' in vendors %}
+    {#<script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>#}
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/10.0.4/swiper-bundle.min.js" integrity="sha512-0N/5ZOjfsh3niel+5dRD40HQkFOWaxoVzqMVAHnmAO2DC3nY/TFB7OYTaPRAFJ571IRS/XRsXGb2XyiFLFeu1g==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+{% endif %}
+
+{% if 'glightbox' in vendors %}
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/glightbox/3.2.0/js/glightbox.min.js" integrity="sha512-S/H9RQ6govCzeA7F9D0m8NGfsGf0/HjJEiLEfWGaMCjFzavo+DkRbYtZLSO+X6cZsIKQ6JvV/7Y9YMaYnSGnAA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script type="text/javascript">
+      const lightbox = GLightbox();
+    </script>
+{% endif %}
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js" integrity="sha512-A7AYk1fGKX6S2SsHywmPkrnzTZHrgiVT7GcQkLGDe2ev0aWb8zejytzS8wjo7PGEXKqJOrjQ4oORtnimIRZBtw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script>
+        AOS.init();
+    </script>
+
+
+    <script src="{{ 'assets/js/init.js'|theme }}"></script>
+{% scripts %}

@@ -1,0 +1,159 @@
+$swatchtheme: null !default;
+$ow_fonts: 0 !default;
+$ow_colors: 0 !default;
+// Bootstrap root variables
+// $blue:       $colour-blue;
+// $indigo:     $colour-indigo;
+// $purple:     $colour-purple;
+// $pink:       $colour-pink;
+// $red:        $colour-red;
+// $orange:     $colour-orange;
+// $yellow:     $colour-yellow;
+// $green:      $colour-green;
+// $teal:       $colour-teal;
+// $cyan:       $colour-cyan;
+// 
+// $white:      $colour-white;
+// $gray:       $colour-gray-600;
+// $gray-dark:  $colour-gray-800;
+
+
+$grid-breakpoints: (
+  xs: 0,
+  sm: $break-sm,
+  md: $break-md,
+  lg: $break-lg,
+  xl: $break-xl,
+  xxl: $break-xxl
+);
+
+$container-max-widths: (
+  sm: $width-sm,
+  md: $width-md,
+  lg: $width-lg,
+  xl: $width-xl,
+  xxl: $width-xxl
+);
+
+@if $ow_colors == 1 {
+
+	//Overriding Bootstrap colors
+	$primary:      $colour-primary;
+	$secondary:    $colour-secondary;
+	$success:      $colour-success;
+	$info:         $colour-info;
+	$warning:      $colour-warning;
+	$danger:       $colour-danger;
+	$light:        $colour-light;
+	$dark:         $colour-dark;
+}
+
+//$link-decoration:       $link-decoration;
+//$link-hover-decoration: $link-hover-decoration;   
+
+// @if $text-align == '' {
+//   $body-text-align: null;
+// }
+// @else {
+//    $body-text-align: $text-align;
+// }
+
+//$enable-caret:                true !default;
+//$enable-reduced-motion:       true !default;
+//$enable-grid-classes:         true !default;
+//$enable-button-pointers:      true !default;
+//$enable-rfs:                  true !default;
+//$enable-deprecation-messages: true !default;
+//$enable-important-utilities:  true !default;
+
+//$h1-font-size:                $font-size-base * 2.5 !default;
+//$h2-font-size:                $font-size-base * 2 !default;
+//$h3-font-size:                $font-size-base * 1.75 !default;
+//$h4-font-size:                $font-size-base * 1.5 !default;
+//$h5-font-size:                $font-size-base * 1.25 !default;
+//$h6-font-size:                $font-size-base !default;
+
+// @if $rounded == 1 {
+//     $enable-rounded:true;
+//     $radius: $border-radius;
+//     $radius-lg: $border-radius-lg;
+// } @else {
+//     $enable-rounded:false;
+//     $radius: 0;
+//     $radius-lg: 0;
+// }
+// 
+// @if $gradients == 1 {
+//     $enable-gradients:true;
+// } @else {
+//     $enable-gradients:false;
+// }
+// 
+// @if $shadows == 1 {
+//     $enable-shadows:true;
+// } @else {
+//     $enable-shadows:false;
+// }
+// 
+//@if $transitions == 1 {
+//    $enable-transitions:true;
+//} @else {
+//    $enable-transitions:false;
+//}
+
+// @if $smooth-scroll == 1 {
+//     $enable-smooth-scroll:true;
+// } @else {
+//     $enable-smooth-scroll:false;
+// }
+// 
+// @if $negative-margins == 1 {
+//     $enable-negative-margins:true;
+// } @else {
+//     $enable-negative-margins:false;
+// }
+// 
+// @if $validation-icons == 1 {
+//     $enable-validation-icons:true;
+// } @else {
+//     $enable-validation-icons:false;
+// }
+// 
+// $body-bg:                   $colour-background;
+// $body-color:                $colour-text;
+// 
+// @if $colour-link != '' {
+//     $link-color:  $colour-link;
+// } @else {
+//     $link-color:  $primary;
+// }
+
+//$body-text-align:                         null !default;
+//
+//$link-color:                              $primary !default;
+//$link-decoration:                         underline !default;
+//$link-shade-percentage:                   20% !default;
+//$link-hover-color:                        shift-color($link-color, $link-shade-percentage) !default;
+//$link-hover-decoration:                   null !default;
+//
+//$stretched-link-pseudo-element:           after !default;
+//$stretched-link-z-index:                  1 !default;
+
+// $font-size-root:              $font-size-base;
+// $font-weight-base:            $font-text-weight;
+// $line-height-base:            $font-text-height;
+// $headings-font-weight:        $font-head-weight;
+// $headings-line-height:        $font-head-height;
+// 
+// // Grid
+// $grid-columns:          $columns;
+// $grid-gutter-width:     $gutter-width;
+// $grid-row-columns:      $row-columns;
+
+// loading Bootstrap styles
+//@import "bootstrap/bootstrap";
+
+@import "bootswatch";
+
+// Adding custom styling
+@import "theme";

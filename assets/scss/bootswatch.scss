@@ -1,0 +1,80 @@
+
+   @if $swatchtheme == 'cerulean' {
+       @import "bootswatch/cerulean/bootstrap";
+   }
+    @else if $swatchtheme == 'cosmo' {
+       @import "bootswatch/pulse/bootstrap";
+    }
+    @else if $swatchtheme == 'cyborg' {
+    	@import "bootswatch/cyborg/bootstrap";
+    }
+    @else if $swatchtheme == 'darkly' {
+    	@import "bootswatch/darkly/bootstrap";
+    }
+    @else if $swatchtheme == 'flatly' {
+    	@import "bootswatch/flatly/bootstrap";
+    }
+    @else if $swatchtheme == 'journal' {
+    	@import "bootswatch/journal/bootstrap";
+    }
+    @else if $swatchtheme == 'litera' {
+    	@import "bootswatch/litera/bootstrap";
+    }
+    @else if $swatchtheme == 'lumen' {
+    	@import "bootswatch/lumen/bootstrap";
+    }
+    @else if $swatchtheme == 'lux' {
+    	@import "bootswatch/lux/bootstrap";
+    }
+    @else if $swatchtheme == 'materia' {
+    	@import "bootswatch/materia/bootstrap";
+    }
+    @else if $swatchtheme == 'minty' {
+    	@import "bootswatch/minty/bootstrap";
+    }
+    @else if $swatchtheme == 'morph' {
+       @import "bootswatch/morph/bootstrap";
+    }
+    @else if $swatchtheme == 'pulse' {
+       @import "bootswatch/pulse/bootstrap";
+    }
+    @else if $swatchtheme == 'quartz' {
+    	@import "bootswatch/quartz/bootstrap";
+    }
+    @else if $swatchtheme == 'sandstone' {
+    	@import "bootswatch/sandstone/bootstrap";
+    }
+    @else if $swatchtheme == 'simplex' {
+    	@import "bootswatch/simplex/bootstrap";
+    }
+    @else if $swatchtheme == 'sketchy' {
+    	@import "bootswatch/sketchy/bootstrap";
+    }
+    @else if $swatchtheme == 'slate' {
+    	@import "bootswatch/slate/bootstrap";
+    }
+    @else if $swatchtheme == 'solar' {
+    	@import "bootswatch/solar/bootstrap";
+    }
+    @else if $swatchtheme == 'spacelab' {
+    	@import "bootswatch/spacelab/bootstrap";
+    }
+    @else if $swatchtheme == 'superhero' {
+    	@import "bootswatch/superhero/bootstrap";
+    }
+    @else if $swatchtheme == 'united' {
+    	@import "bootswatch/united/bootstrap";
+    }
+    @else if $swatchtheme == 'vapor' {
+    	@import "bootswatch/vapor/bootstrap";
+    }
+    @else if $swatchtheme == 'yeti' {
+    	@import "bootswatch/yeti/bootstrap";
+    }
+    @else if $swatchtheme == 'zephyr' {
+    	@import "bootswatch/zephyr/bootstrap";
+    }
+   @else {
+      @import "bootstrap/bootstrap";
+   }   
+   

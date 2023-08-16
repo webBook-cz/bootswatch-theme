@@ -1,15 +1,10 @@
-// Morph 5.3.0
+// Morph 5.3.1
 // Bootswatch
 
 @if $ow_fonts == 0 {
   @import url("https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700&display=swap");
 }
 // Variables
-
-//$web-font-path: "https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700&display=swap" !default;
-//@if $web-font-path {
-//  @import url($web-font-path);
-//}
 
 $btn-box-shadow-inset: inset 2px 3px 6px rgba($black, .2), inset -3px -2px 6px rgba($white, .2) !default;
 
@@ -383,8 +378,8 @@ $btn-box-shadow-inset: inset 2px 3px 6px rgba($black, .2), inset -3px -2px 6px r
 // Indicators
 
 .alert {
-  box-shadow: $dropdown-box-shadow;
   backdrop-filter: blur(3px);
+  box-shadow: $dropdown-box-shadow;
 
   @each $color, $value in $theme-colors {
     &-#{$color} {
@@ -408,16 +403,16 @@ $btn-box-shadow-inset: inset 2px 3px 6px rgba($black, .2), inset -3px -2px 6px r
 
   &-inner,
   .arrow {
-    box-shadow: $dropdown-box-shadow;
     backdrop-filter: blur(3px);
+    box-shadow: $dropdown-box-shadow;
   }
 }
 
 .popover,
 .toast,
 .modal-content {
-  box-shadow: $dropdown-box-shadow;
   backdrop-filter: blur(3px);
+  box-shadow: $dropdown-box-shadow;
 }
 
 .progress {

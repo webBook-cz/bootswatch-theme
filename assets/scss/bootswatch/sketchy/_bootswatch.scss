@@ -1,15 +1,10 @@
-// Sketchy 5.3.0
+// Sketchy 5.3.1
 // Bootswatch
 @if $ow_fonts == 0 {
   @import url("https://fonts.googleapis.com/css?family=Neucha|Cabin+Sketch&display=swap");
 }
 
 // Variables
-
-//$web-font-path: "" !default;
-//@if $web-font-path {
-//  @import url($web-font-path);
-//}
 
 // stylelint-disable scss/dollar-variable-default
 $border-radius-sketchy:    255px 25px 225px 25px / 25px 225px 25px 255px;
@@ -171,9 +166,9 @@ select.form-control {
   position: relative;
   width: 0;
   height: 0;
+  appearance: none;
   cursor: pointer;
   border: none;
-  appearance: none;
 
   &::before {
     position: absolute;
@@ -221,9 +216,9 @@ select.form-control {
   position: relative;
   width: 0;
   height: 0;
+  appearance: none;
   cursor: pointer;
   border: none;
-  appearance: none;
 
   &::before {
     position: absolute;

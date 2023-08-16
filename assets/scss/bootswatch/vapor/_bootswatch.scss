@@ -1,15 +1,10 @@
-// Vapor 5.3.0
+// Vapor 5.3.1
 // Bootswatch
 
 @if $ow_fonts == 0 {
   @import url("https://fonts.googleapis.com/css2?family=Lato:wght@400;700&display=swap");
 }
 // Variables
-
-//$web-font-path: "" !default;
-//@if $web-font-path {
-//  @import url($web-font-path);
-//}
 
 $outrun: false !default;
 

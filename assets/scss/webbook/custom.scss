@@ -20,3 +20,23 @@ body {
   z-index: 1;
   display: block;
 }
+
+.bi {
+   vertical-align: -.125em;
+   fill: currentColor;
+}
+
+.faicon-ico {
+  font-size: 2em;
+  color: $primary;
+}
+
+#theme-switcher {
+  i {
+    display: none;
+  
+    &.active {
+        display: inline;
+      }
+    }
+}

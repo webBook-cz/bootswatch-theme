@@ -1,7 +1,5 @@
 // Font Awesome demo page styling
 //@import "webbook/fa";
-// Bootstrap icons
-@import "webbook/icons";
 // Local fonts
 // @import "webbook/local-fonts";
 // Dark mode
@@ -10,27 +8,24 @@
 //@import "webbook/404";
 // Rainlab Blog plugin styling 
 
-
-//// sticky footer
-body {
-  display: flex;
-  flex-direction: column;
-  min-height: 100vh;
-  min-height: -webkit-fill-available;
+// Bootstrap icons
+@if $bs_icons == 1 {
+  @import "webbook/icons";
 }
 
-html {
-  height: -webkit-fill-available;
+// Color Switch on bottom of the page
+@if $color_switch_down == 1 {
+    #theme-dropdown {
+      position: fixed;
+      bottom: 1em;
+      right: 1em;
+      padding: 0.125em 0.25em;
+      border-radius: $border-radius;
+    }
 }
-
-main {
-  flex: 1 0 auto;
-}
-//// sticky footer end
 
 //// header height (space for <main>)
 $header_height: 70px;
-$topbar_height: 44px;
 
 //@import "theme/style";
 @import "webbook/custom";

@@ -1,0 +1,122 @@
+url = "/icons"
+layout = "default"
+meta_title = "Bootstrap Icons"
+is_hidden = 0
+==
+<?php
+function onStart()
+{
+   $bootstrapfontsource = 'https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css';
+   $lines = file($bootstrapfontsource);
+   $icon_names = array();
+   foreach ($lines as $line) {
+     if(substr($line,0,1) == '.')
+     {
+       $name = explode("::", $line);
+       $icon_names[] = array('code' => substr($name[0],1), 'name' => ucfirst(str_replace('-', ' ', substr($name[0],4))));
+     }
+   }
+   array_shift($icon_names);
+   $this['bootstrapfont'] = $icon_names;
+   $this['bootstrapfontsource'] = $bootstrapfontsource;
+}
+?>
+==
+<main id="content" class="container pt-5" role="main">
+
+  <section id="breadcrumbs" class="breadcrumbs">
+      <div class="container">
+
+        <h2>Bootstrap Icons</h2>
+
+      </div>
+    </section>
+
+  <div class="d-flex mb-2">
+    <div class="title">
+      {#<h2 id="icons" class="mb-0">Bootstrap Icons</h2>#}
+      <p class="mt-2">{{ bootstrapfontsource }}</p>
+    </div>
+    <form class="subnav-search d-flex flex-nowrap ms-auto mt-2 mb-0">
+      <label for="search" class="sr-only">Search for icons</label>
+      <input class="form-control search mb-0" id="search" placeholder="Start typing to filter..." autocomplete="off">
+    </form>
+  </div>
+  <hr class="mt-0">
+
+
+  <ul class="row row-cols-3 row-cols-sm-4 row-cols-lg-6 row-cols-xl-8 list-unstyled list">
+
+
+    {% for icon in bootstrapfont %}
+
+    <li class="col mb-4">
+          
+          <div class="p-3 py-4 mb-2 bg-light text-center rounded">
+            <a target="icon" href="https://icons.getbootstrap.com/icons/{{ icon['code']|str_replace('bi-','') }}/">
+            <i class="bi {{ icon['code'] }} promo-icon d-block text-primary bi-3x"></i>
+            </a>
+          </div>
+          <div class="name text-muted text-decoration-none text-center pt-1" onclick="copyToClipboard('<i class=&#34;bi {{ icon['code'] }}&#34;></i>')">
+            {{ icon['name'] }}
+          </div>
+        
+    </li>
+
+    {% endfor %}
+
+    </ul>
+
+
+</div>
+
+{#}
+      <h2 id="install">Install</h2>
+<p>Bootstrap Icons are published to npm, but they can also be manually downloaded if needed.</p>
+<div class="row my-4">
+  <div class="col-md-6">
+<h3 id="npm">npm</h3>
+<p>Install Bootstrap Icons via command line with npm.</p>
+<div class="highlight"><pre class="chroma"><code class="language-shell" data-lang="shell">npm install bootstrap-icons</code></pre></div>
+
+  </div>
+  <div class="col-md-6">
+<h3 id="download">Download</h3>
+<p>Our <a href="https://github.com/twbs/icons/releases/">releases</a> are published to GitHub. All icon SVGs are included in the bundle, as well as license and readme files. Our <code>package.json</code> is also included, though our npm scripts are primarily available for our development workflows.</p>
+<p><a class="btn btn-outline-primary" href="https://github.com/twbs/icons/releases/latest/">Download latest ZIP</a></p>
+
+  </div>
+</div>
+#}
+</main>
+{#% put styles %}
+  <link rel="stylesheet" href="{{ bootstrapfontsource }}">
+{% endput %#}
+{% put scripts %}
+  <script src="//cdnjs.cloudflare.com/ajax/libs/list.js/1.5.0/list.min.js"></script>
+	<script>
+	  new List('content', {
+	    valueNames: ['name']
+	  });
+
+    const copyToClipboard = str => {
+      const el = document.createElement('textarea');
+      el.value = str;
+      el.setAttribute('readonly', '');
+      el.style.position = 'absolute';
+      el.style.left = '-9999px';
+      document.body.appendChild(el);
+      const selected =
+        document.getSelection().rangeCount > 0
+          ? document.getSelection().getRangeAt(0)
+          : false;
+      el.select();
+      document.execCommand('copy');
+      document.body.removeChild(el);
+      if (selected) {
+        document.getSelection().removeAllRanges();
+        document.getSelection().addRange(selected);
+      }
+    };
+	</script>
+{% endput %}

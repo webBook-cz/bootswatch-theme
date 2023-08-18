@@ -32,26 +32,26 @@
   }
 
 
-  // Toggle light and dark themes
-  function toggleThemeMenu() {
-    let themeMenu = document.querySelector('#theme-menu');
-
-    if (!themeMenu) return;
-
-    document.querySelectorAll('[data-bs-theme-value]').forEach(value => {
-    console.log('foo');
-      value.addEventListener('click', () => {
-        const theme = value.getAttribute('data-bs-theme-value');
-        document.documentElement.setAttribute('data-bs-theme', theme);
-        console.log(theme);
-      });
-    });
-  }
+//  // Toggle light and dark themes
+//  function toggleThemeMenu() {
+//    let themeMenu = document.querySelector('#theme-menu');
+//
+//    if (!themeMenu) return;
+//
+//    document.querySelectorAll('[data-bs-theme-value]').forEach(value => {
+//    console.log('foo');
+//      value.addEventListener('click', () => {
+//        const theme = value.getAttribute('data-bs-theme-value');
+//        document.documentElement.setAttribute('data-bs-theme', theme);
+//        console.log(theme);
+//      });
+//    });
+//  }
 
   addNavbarTransparentClass();
 
 
-  toggleThemeMenu();
+//  toggleThemeMenu();
 
   // Prevent empty `a` elements or `submit` buttons from navigating away
   const targets = document.querySelectorAll('[href="#"], [type="submit"]');

@@ -1,6 +1,8 @@
 $swatchtheme: null !default;
 $ow_fonts: 0 !default;
 $ow_colors: 0 !default;
+$bs_icons: 1 !default;
+
 // Bootstrap root variables
 // $blue:       $colour-blue;
 // $indigo:     $colour-indigo;
@@ -16,7 +18,6 @@ $ow_colors: 0 !default;
 // $white:      $colour-white;
 // $gray:       $colour-gray-600;
 // $gray-dark:  $colour-gray-800;
-
 
 $grid-breakpoints: (
   xs: 0,
@@ -34,19 +35,6 @@ $container-max-widths: (
   xl: $width-xl,
   xxl: $width-xxl
 );
-
-@if $ow_colors == 1 {
-
-	//Overriding Bootstrap colors
-	$primary:      $colour-primary;
-	$secondary:    $colour-secondary;
-	$success:      $colour-success;
-	$info:         $colour-info;
-	$warning:      $colour-warning;
-	$danger:       $colour-danger;
-	$light:        $colour-light;
-	$dark:         $colour-dark;
-}
 
 //$link-decoration:       $link-decoration;
 //$link-hover-decoration: $link-hover-decoration;   

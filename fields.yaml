@@ -173,11 +173,29 @@ tabs:
             tab: General
             type: section
 
+        bs_icons:
+            tab: General
+            label: Use Bootstrap icons
+            type: switch
+            default: true
+            assetVar: 'bs_icons'
+            span: row
+            spanClass: "col-sm-3 p-l-0"
+
         font_awesome:
             tab: General
             label: Use Font Awesome
             type: switch
-            default: true
+            default: false
+            span: row
+            spanClass: "col-sm-3 p-l-0"
+
+        color_switch_down:
+            tab: General
+            label: Color Switch down
+            type: switch
+            assetVar: 'color_switch_down'
+            default: false
             span: row
             spanClass: "col-sm-3 p-l-0"
 
@@ -187,103 +205,307 @@ tabs:
             type: text
             assetVar: 'google-analytics'
             span: row
-            spanClass: "col-sm-4 p-l-0"
-
-        intro_enabled:
-            tab: Intro
-            label: Enabled
-            type: switch
-            default: true
-        intro_headline:
-            tab: Intro
-            label: Headline
-            type: text
-            span: auto
-            default: "Bootstrap 5 SASS Theme"
-        intro_subhead:
-            tab: Intro
-            label: Subhead
-            type: text
-            span: auto
-            default: "Bootsrtrap with easy custom config!"
-        intro_button:
-            tab: Intro
-            label: Button
-            type: text
-            default: Go to Theme Homepage
-            span: left
-        intro_button_link:
-            tab: Intro
-            label: Button link
-            type: text
-            default: "/content/default"
-            span: right
-            comment: Leave empty for hiding button
-        intro_img:
-            tab: Intro
-            label: Image
-            comment: Please aspect ratio 0,5625 (e.g. 621 x 1104)
-            type: fileupload
-            mode: image
-            imageWidth: 1200
-            imageHeight: 900
-            assetVar: 'intro-img'
+            spanClass: "col-sm-3 p-l-0"
 
         ow_colors:
-            label: Overwrite colors
+            label: Overwrite Main colors
             type: switch
-            tab: Bootstrap Colours & Settings
+            tab: Colours
             default: false
             assetVar: 'ow_colors'
             span: auto
+
+        det_colors:
+            label: Define Secondary and Tertiary colours
+            type: switch
+            tab: Colours
+            default: false
+            assetVar: 'det_colors'
+            span: auto
+            trigger:
+                action: show
+                field: ow_colors
+                condition: checked
+
+        info_section_13:
+            tab: Colours
+            label: Main Colours
+            type: section
+            spanClass: "p-t-0"
+
+        background_color_light:
+            label: Background Colour
+            tab: Colours
+            type: colorpicker
+            default: '#ffffff'
+            assetVar: 'colour-background-light'
+            availableColors: ['#F8F8F8', '#F0F0F0', '#E8E8E8', '#E0E0E0', '#D8D8D8', '#D0D0D0', '#C8C8C8', '#C0C0C0', '#B8B8B8', '#B0B0B0', '#A8A8A8 ', '#A0A0A0', '#989898', '#909090', '#888888', '#808080']
+            showAlpha: true
+            span: row
+            spanClass: "col-sm-6"
+        background_color_dark:
+            label: Background Colour Dark
+            tab: Colours
+            type: colorpicker
+            default: '#212529'
+            availableColors: ['#808080', '#787878', '#707070', '#686868', '#606060', '#585858', '#505050', '#484848', '#404040', '#383838', '#303030 ', '#282828', '#202020', '#181818', '#101010', '#080808']
+            showAlpha: true
+            assetVar: 'colour-background-dark'
+            span: row
+            spanClass: "col-sm-6"
+        text_color_light:
+            label: Text Colour Light
+            tab: Colours
+            type: colorpicker
+            default: '#212529'
+            availableColors: ['#080808', '#101010','#181818', '#202020', '#282828', '#303030', '#383838','#404040','#484848','#505050','#585858','#606060','#686868','#707070','#787878','#808080']
+            showAlpha: true
+            assetVar: 'colour-text-light'
+            span: row
+            spanClass: "col-sm-6"
+        text_color_dark:
+            label: Text Colour Dark
+            tab: Colours
+            type: colorpicker
+            default: '#dee2e6'
+            availableColors: ['#808080', '#888888', '#909090', '#989898', '#A0A0A0', '#A8A8A8 ', '#B0B0B0', '#B8B8B8', '#C0C0C0', '#C8C8C8', '#D0D0D0', '#D8D8D8', '#E0E0E0', '#E8E8E8', '#F0F0F0', '#F8F8F8']
+            showAlpha: true
+            assetVar: 'colour-text-dark'
+            span: row
+            spanClass: "col-sm-6"
+
+        info_section_12:
+            tab: Colours
+            label: Secondary Colours
+            type: section
+            spanClass: "p-t-0"
+            trigger:
+                action: show
+                field: det_colors
+                condition: checked
+
+        secondary_bg_color_light:
+            label: Background Colour
+            tab: Colours
+            type: colorpicker
+            default: '#e9ecef'
+            assetVar: 'secondary-colour-bg-light'
+            availableColors: ['#F8F8F8', '#F0F0F0', '#E8E8E8', '#E0E0E0', '#D8D8D8', '#D0D0D0', '#C8C8C8', '#C0C0C0', '#B8B8B8', '#B0B0B0', '#A8A8A8 ', '#A0A0A0', '#989898', '#909090', '#888888', '#808080']
+            showAlpha: true
+            span: row
+            spanClass: "col-sm-6"
+            trigger:
+                action: show
+                field: det_colors
+                condition: checked
+        secondary_bg_color_dark:
+            label: Background Colour Dark
+            tab: Colours
+            type: colorpicker
+            default: '#343a40'
+            availableColors: ['#808080', '#787878', '#707070', '#686868', '#606060', '#585858', '#505050', '#484848', '#404040', '#383838', '#303030 ', '#282828', '#202020', '#181818', '#101010', '#080808']
+            showAlpha: true
+            assetVar: 'secondary-colour-bg-dark'
+            span: row
+            spanClass: "col-sm-6"
+            trigger:
+                action: show
+                field: det_colors
+                condition: checked
+        secondary_text_color_light:
+            label: Text Colour Light
+            tab: Colours
+            type: colorpicker
+            default: 'rgba(33, 37, 41, 0.75)'
+            availableColors: ['#080808', '#101010','#181818', '#202020', '#282828', '#303030', '#383838','#404040','#484848','#505050','#585858','#606060','#686868','#707070','#787878','#808080']
+            showAlpha: true
+            assetVar: 'secondary-colour-text-light'
+            span: row
+            spanClass: "col-sm-6"
+            trigger:
+                action: show
+                field: det_colors
+                condition: checked
+        secondary_text_color_dark:
+            label: Text Colour Dark
+            tab: Colours
+            type: colorpicker
+            default: 'rgba(222, 226, 230, 0.75)'
+            availableColors: ['#808080', '#888888', '#909090', '#989898', '#A0A0A0', '#A8A8A8 ', '#B0B0B0', '#B8B8B8', '#C0C0C0', '#C8C8C8', '#D0D0D0', '#D8D8D8', '#E0E0E0', '#E8E8E8', '#F0F0F0', '#F8F8F8']
+            showAlpha: true
+            assetVar: 'secondary-colour-text-dark'
+            span: row
+            spanClass: "col-sm-6"
+            trigger:
+                action: show
+                field: det_colors
+                condition: checked
+
+        info_section_11:
+            tab: Colours
+            label: Tertiary Colours
+            type: section
+            spanClass: "p-t-0"
+            trigger:
+                action: show
+                field: det_colors
+                condition: checked
+
+        tertiary_bg_color_light:
+            label: Background Colour
+            tab: Colours
+            type: colorpicker
+            default: '#f8f9fa'
+            assetVar: 'tertiary-colour-bg-light'
+            availableColors: ['#F8F8F8', '#F0F0F0', '#E8E8E8', '#E0E0E0', '#D8D8D8', '#D0D0D0', '#C8C8C8', '#C0C0C0', '#B8B8B8', '#B0B0B0', '#A8A8A8 ', '#A0A0A0', '#989898', '#909090', '#888888', '#808080']
+            showAlpha: true
+            span: row
+            spanClass: "col-sm-6"
+            trigger:
+                action: show
+                field: det_colors
+                condition: checked
+        tertiary_bg_color_dark:
+            label: Background Colour Dark
+            tab: Colours
+            type: colorpicker
+            default: '#2b3035'
+            availableColors: ['#808080', '#787878', '#707070', '#686868', '#606060', '#585858', '#505050', '#484848', '#404040', '#383838', '#303030 ', '#282828', '#202020', '#181818', '#101010', '#080808']
+            showAlpha: true
+            assetVar: 'tertiary-colour-bg-dark'
+            span: row
+            spanClass: "col-sm-6"
+            trigger:
+                action: show
+                field: det_colors
+                condition: checked
+        tertiary_text_color_light:
+            label: Text Colour Light
+            tab: Colours
+            type: colorpicker
+            default: 'rgba(33, 37, 41, 0.5)'
+            availableColors: ['#080808', '#101010','#181818', '#202020', '#282828', '#303030', '#383838','#404040','#484848','#505050','#585858','#606060','#686868','#707070','#787878','#808080']
+            showAlpha: true
+            assetVar: 'tertiary-colour-text-light'
+            span: row
+            spanClass: "col-sm-6"
+            trigger:
+                action: show
+                field: det_colors
+                condition: checked
+        tertiary_text_color_dark:
+            label: Text Colour Dark
+            tab: Colours
+            type: colorpicker
+            default: 'rgba(222, 226, 230, 0.5)'
+            availableColors: ['#808080', '#888888', '#909090', '#989898', '#A0A0A0', '#A8A8A8 ', '#B0B0B0', '#B8B8B8', '#C0C0C0', '#C8C8C8', '#D0D0D0', '#D8D8D8', '#E0E0E0', '#E8E8E8', '#F0F0F0', '#F8F8F8']
+            showAlpha: true
+            assetVar: 'tertiary-colour-text-dark'
+            span: row
+            spanClass: "col-sm-6"
+            trigger:
+                action: show
+                field: det_colors
+                condition: checked
+
+        bs_colors:
+            label: Overwrite Bootstrap colors
+            type: switch
+            tab: Colours
+            default: false
+            assetVar: 'bs_colors'
+            span: auto
+
+        info_section_9:
+            tab: Colours
+            label: Bootstrap Colours
+            type: section
+            spanClass: "p-t-0"
+            trigger:
+                action: show
+                field: bs_colors
+                condition: checked
+
         primary_color:
             label: Primary Colour
-            tab: Bootstrap Colours & Settings
+            tab: Colours
             type: colorpicker
-            default: '#2f3c48'
+            default: '#2c3e50'
             assetVar: 'colour-primary'
+            trigger:
+                action: show
+                field: bs_colors
+                condition: checked
         secondary_color:
             label: Secondary Colour
-            tab: Bootstrap Colours & Settings
+            tab: Colours
             type: colorpicker
-            default: '#6f7f8c'
+            default: '#95a5a6'
             assetVar: 'colour-secondary'
+            trigger:
+                action: show
+                field: bs_colors
+                condition: checked
         success_color:
             label: Success Colour
-            tab: Bootstrap Colours & Settings
+            tab: Colours
             type: colorpicker
-            default: '#3e4d59'
+            default: '#18bc9c'
             assetVar: 'colour-success'
+            trigger:
+                action: show
+                field: bs_colors
+                condition: checked
         info_color:
             label: Info color
             type: colorpicker
-            tab: Bootstrap Colours & Settings
-            default: '#5c8f94'
+            tab: Colours
+            default: '#3498db'
             assetVar: 'colour-info'
+            trigger:
+                action: show
+                field: bs_colors
+                condition: checked
         warning_color:
             label: Warning color
             type: colorpicker
-            tab: Bootstrap Colours & Settings
-            default: '#6e9fa5'
+            tab: Colours
+            default: '#f39c12'
             assetVar: 'colour-warning'
+            trigger:
+                action: show
+                field: bs_colors
+                condition: checked
         danger_color:
             label: Danger color
             type: colorpicker
-            tab: Bootstrap Colours & Settings
-            default: '#cc330d'
+            tab: Colours
+            default: '#e74c3c'
             assetVar: 'colour-danger'
+            trigger:
+                action: show
+                field: bs_colors
+                condition: checked
         light_color:
             label: Light color
             type: colorpicker
-            tab: Bootstrap Colours & Settings
-            default: '#eceeec'
+            tab: Colours
+            default: '#ecf0f1'
             assetVar: 'colour-light'
+            trigger:
+                action: show
+                field: bs_colors
+                condition: checked
         dark_color:
             label: Dark color
             type: colorpicker
-            tab: Bootstrap Colours & Settings
-            default: '#1e2b37'
+            tab: Colours
+            default: '#7b8a8b'
             assetVar: 'colour-dark'
+            trigger:
+                action: show
+                field: bs_colors
+                condition: checked
 
 #        blue:
 #            label: Blue

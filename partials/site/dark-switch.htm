@@ -1,0 +1,125 @@
+          <ul class="navbar-nav bg-primary" id="theme-dropdown">
+            <li class="nav-item {{ this.theme.color_switch_down ? 'dropup':'dropdown' }}">
+              <a class="nav-link dropdown-toggle d-flex align-items-center" href="#" id="theme-switcher" aria-expanded="false" data-bs-toggle="dropdown" data-bs-display="static" aria-label="Toggle theme">
+                <i class="bi bi-circle-half active" data-represent="auto"></i>
+                <i class="bi bi-sun-fill" data-represent="light"></i>
+                <i class="bi bi-moon-stars-fill" data-represent="dark"></i>
+                <span class="d-lg-none ms-2">Toggle theme</span>
+              </a>
+              <ul class="dropdown-menu dropdown-menu-end">
+                <li>
+                  <button type="button" class="dropdown-item d-flex align-items-center" data-bs-theme-value="auto" aria-pressed="false">
+                    <i class="bi bi-circle-half"></i><span class="ms-2">Auto</span>
+                  </button>
+                </li>
+                <li>
+                  <button type="button" class="dropdown-item d-flex align-items-center" data-bs-theme-value="light" aria-pressed="false">
+                    <i class="bi bi-sun-fill"></i><span class="ms-2">Light</span>
+                  </button>
+                </li>
+                <li>
+                  <button type="button" class="dropdown-item d-flex align-items-center" data-bs-theme-value="dark" aria-pressed="false">
+                    <i class="bi bi-moon-stars-fill"></i><span class="ms-2">Dark</span>
+                  </button>
+                </li>
+              </ul>
+            </li>
+          </ul>
+
+{% put scripts %}
+<script>
+/*!
+ * Color mode toggler for Bootstrap's docs (https://getbootstrap.com/) - modified
+ * Copyright 2011-2023 The Bootstrap Authors
+ * Licensed under the Creative Commons Attribution 3.0 Unported License.
+ */
+
+(() => {
+  'use strict'
+
+  const getStoredTheme = () => localStorage.getItem('theme')
+  const setStoredTheme = theme => localStorage.setItem('theme', theme)
+
+  const getPreferredTheme = () => {
+    const storedTheme = getStoredTheme()
+    if (storedTheme) {
+      return storedTheme
+    }
+
+    return window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light'
+  }
+
+  const setTheme = theme => {
+    if (theme === 'auto' && window.matchMedia('(prefers-color-scheme: dark)').matches) {
+      document.documentElement.setAttribute('data-bs-theme', 'dark')
+    } else {
+      document.documentElement.setAttribute('data-bs-theme', theme)
+    }
+  }
+
+  setTheme(getPreferredTheme())
+
+  const showActiveTheme = (theme, focus = false) => {
+    const themeSwitcher = document.querySelector('#theme-switcher')
+
+    if (!themeSwitcher) {
+      return
+    }
+
+    const btnToActive = document.querySelector(`[data-bs-theme-value="${theme}"]`)
+
+    document.querySelectorAll('[data-bs-theme-value]').forEach(element => {
+      element.classList.remove('active')
+      element.setAttribute('aria-pressed', 'false')
+    })
+
+    btnToActive.classList.add('active')
+    btnToActive.setAttribute('aria-pressed', 'true')
+
+    themeSwitcher.setAttribute('aria-label', 'Toggle theme ' + '(' + theme + ')')
+
+    var nodes = themeSwitcher.childNodes
+    for(var i=0; i< nodes.length; i++) {
+    if (nodes[i].nodeName.toLowerCase() == 'i') {
+         console.log(nodes[i].getAttribute('data-represent'))
+         if (nodes[i].getAttribute('data-represent') == theme)
+         {
+            nodes[i].classList.add('active')
+         }
+         else
+         {
+            nodes[i].classList.remove('active')
+         }
+       }
+    }
+
+    console.log(theme)
+
+    if (focus) {
+      themeSwitcher.focus()
+    }
+  }
+
+  window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', () => {
+    const storedTheme = getStoredTheme()
+    if (storedTheme !== 'light' && storedTheme !== 'dark') {
+      setTheme(getPreferredTheme())
+    }
+  })
+
+  window.addEventListener('DOMContentLoaded', () => {
+    showActiveTheme(getPreferredTheme())
+
+    document.querySelectorAll('[data-bs-theme-value]')
+      .forEach(toggle => {
+        toggle.addEventListener('click', () => {
+          const theme = toggle.getAttribute('data-bs-theme-value')
+          setStoredTheme(theme)
+          setTheme(theme)
+          showActiveTheme(theme, true)
+        })
+      })
+  })
+})()
+</script>
+{% endput %}

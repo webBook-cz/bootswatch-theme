@@ -4,7 +4,7 @@ title = "Home Page"
 meta_title = "{{ this.page.title }}"
 ==
 function onStart(){
-  $this->page['title'] = $this->theme->swatchtheme;
+  $this->page['title'] = ucfirst($this->theme->swatchtheme);
 }
 ==
 
@@ -21,7 +21,7 @@ function onStart(){
       </div>
 
 
-    <div class="container">
+    <div class="container mb-3">
 
       <!-- Navbar
       ================================================== -->
@@ -366,6 +366,13 @@ function onStart(){
                 <small class="text-body-secondary">with faded secondary text</small>
               </h3>
               <p class="lead">Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor.</p>
+              <h1 class="display-1">Display 1</h1>
+              <h1 class="display-2">Display 2</h1>
+              <h1 class="display-3">Display 3</h1>
+              <h1 class="display-4">Display 4</h1>
+              <h1 class="display-5">Display 5</h1>
+              <h1 class="display-6">Display 6</h1>
+
             </div>
           </div>
           <div class="col-lg-4">
@@ -404,6 +411,7 @@ function onStart(){
             </div>
           </div>
         </div>
+              <hr>
 
         <!-- Blockquotes -->
 
@@ -1175,6 +1183,7 @@ function onStart(){
                 <li class="list-group-item list-group-item-success d-flex justify-content-between align-items-center">
                   Morbi leo risus
                   <span class="badge bg-primary rounded-pill">1</span>
+                </li>
                 <li class="list-group-item list-group-item-info d-flex justify-content-between align-items-center">
                   Cras justo odio
                   <span class="badge bg-primary rounded-pill">5</span>
@@ -1573,7 +1582,11 @@ function onStart(){
         </div>
       </div>
 
-      <footer id="footer">
+    </div> <!--container -->
+
+
+    <div class="footer body-secondary bg-body-secondary pt-4">
+      <div class="container">
         <div class="row">
           <div class="col-lg-12">
             <p>Made by <a href="https://thomaspark.co/">Thomas Park</a>.</p>
@@ -1582,5 +1595,5 @@ function onStart(){
 
           </div>
         </div>
-      </footer>
+      </div>
     </div>

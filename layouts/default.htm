@@ -9,14 +9,20 @@ function onStart()
 }
 ==
 <!doctype html>
-<html lang="{{ this.app.locale|slice(0,2) }}" {{ pageVars.dark_switch == 'none' ? 'data-bs-theme=' ~ pageVars.dark_mode }}>
+<html lang="{{ this.app.locale|slice(0,2) }}" {{ pageVars.dark_switch == 'none' ? 'data-bs-theme=' ~ pageVars.dark_mode }} class="h-100">
 <head>
     {% partial 'site/meta' %}
 </head>
-<body id="top">
-    {% partial 'site/navbar' %}
-
-    {% page %}
+<body id="top" class="d-flex flex-column h-100">
+    <header>
+        {% partial 'site/navbar' %}
+    </header>
+    <main>
+        {% page %}
+    </main>
+    <footer  class="mt-auto">
+        {% partial 'site/footer' %}
+    </footer>
     
     {% framework extras %}
     {% partial 'site/scripts' %}

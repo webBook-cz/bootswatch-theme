@@ -22,6 +22,7 @@ tabs:
             tab: General
             label: Copyright 
             type: text
+            default: My Company
             span: row
             spanClass: "col-sm-6 p-l-0"
         ow_fonts:
@@ -65,6 +66,7 @@ tabs:
                 zephyr: Zephyr
                 emptyOption: None
             assetVar: 'swatchtheme'
+            default: flatly
             span: row
             spanClass: "col-sm-9 p-l-0"
 
@@ -192,10 +194,24 @@ tabs:
 
         color_switch_down:
             tab: General
-            label: Color Switch down
+            label: Color Switch down on page
             type: switch
             assetVar: 'color_switch_down'
             default: false
+            span: row
+            spanClass: "col-sm-3 p-l-0"
+
+        info_section_14:
+            tab: General
+            type: section
+
+        header_height:
+            label: Navbar height
+            tab: General
+            type: text
+            assetVar: 'header_height'
+            comment: 'Complete NavBar height (incl. padding) eg: 70px'
+            default: 70px
             span: row
             spanClass: "col-sm-3 p-l-0"
 
@@ -208,12 +224,24 @@ tabs:
             spanClass: "col-sm-3 p-l-0"
 
         ow_colors:
-            label: Overwrite Main colors
+            label: Overwrite colors
             type: switch
             tab: Colours
             default: false
             assetVar: 'ow_colors'
+            span: full
+
+        main_colors:
+            label: Overwrite Main colors
+            type: switch
+            tab: Colours
+            default: false
+            assetVar: 'main_colors'
             span: auto
+            trigger:
+                action: show
+                field: ow_colors
+                condition: checked
 
         det_colors:
             label: Define Secondary and Tertiary colours
@@ -224,7 +252,7 @@ tabs:
             span: auto
             trigger:
                 action: show
-                field: ow_colors
+                field: main_colors
                 condition: checked
 
         info_section_13:
@@ -232,17 +260,25 @@ tabs:
             label: Main Colours
             type: section
             spanClass: "p-t-0"
+            trigger:
+                action: show
+                field: main_colors
+                condition: checked
 
         background_color_light:
             label: Background Colour
             tab: Colours
             type: colorpicker
             default: '#ffffff'
-            assetVar: 'colour-background-light'
+            assetVar: 'body-bg'
             availableColors: ['#F8F8F8', '#F0F0F0', '#E8E8E8', '#E0E0E0', '#D8D8D8', '#D0D0D0', '#C8C8C8', '#C0C0C0', '#B8B8B8', '#B0B0B0', '#A8A8A8 ', '#A0A0A0', '#989898', '#909090', '#888888', '#808080']
             showAlpha: true
             span: row
             spanClass: "col-sm-6"
+            trigger:
+                action: show
+                field: main_colors
+                condition: checked
         background_color_dark:
             label: Background Colour Dark
             tab: Colours
@@ -250,9 +286,13 @@ tabs:
             default: '#212529'
             availableColors: ['#808080', '#787878', '#707070', '#686868', '#606060', '#585858', '#505050', '#484848', '#404040', '#383838', '#303030 ', '#282828', '#202020', '#181818', '#101010', '#080808']
             showAlpha: true
-            assetVar: 'colour-background-dark'
+            assetVar: 'body-bg-dark'
             span: row
             spanClass: "col-sm-6"
+            trigger:
+                action: show
+                field: main_colors
+                condition: checked
         text_color_light:
             label: Text Colour Light
             tab: Colours
@@ -263,6 +303,10 @@ tabs:
             assetVar: 'colour-text-light'
             span: row
             spanClass: "col-sm-6"
+            trigger:
+                action: show
+                field: main_colors
+                condition: checked
         text_color_dark:
             label: Text Colour Dark
             tab: Colours
@@ -273,6 +317,10 @@ tabs:
             assetVar: 'colour-text-dark'
             span: row
             spanClass: "col-sm-6"
+            trigger:
+                action: show
+                field: main_colors
+                condition: checked
 
         info_section_12:
             tab: Colours
@@ -415,6 +463,10 @@ tabs:
             default: false
             assetVar: 'bs_colors'
             span: auto
+            trigger:
+                action: show
+                field: ow_colors
+                condition: checked
 
         info_section_9:
             tab: Colours

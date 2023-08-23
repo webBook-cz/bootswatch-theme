@@ -25,7 +25,7 @@
 }
 
 //// header height (space for <main>)
-$header_height: 70px;
+$header_height: 70px !default;
 
 //@import "theme/style";
 @import "webbook/custom";

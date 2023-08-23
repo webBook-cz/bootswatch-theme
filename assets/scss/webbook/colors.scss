@@ -1,9 +1,30 @@
 // Overriding Bootstrap colors
 
-$body-color:   		$colour-text-light;
-$body-color-dark:	$colour-text-dark;
-$body-bg: 			$colour-background-light;
-$body-bg-dark:		$colour-background-dark;
+@if $main_colors == '1' {
+	$body-color:   		$colour-text-light;
+	$body-color-dark:	$colour-text-dark;
+	$body-bg: 			$body-bg;
+	$body-bg-dark:		$body-bg-dark;
+
+	@if $det_colors == '1' {
+		$body-secondary-color:      $secondary-colour-text-light;
+		$body-secondary-bg:         $secondary-colour-bg-light;
+		$body-secondary-color-dark: $secondary-colour-text-dark;
+		$body-secondary-bg-dark:    $secondary-colour-bg-dark;
+		
+		$body-tertiary-color:       $tertiary-colour-text-light;
+		$body-tertiary-bg:          $tertiary-colour-bg-light;
+		$body-tertiary-color-dark:  $tertiary-colour-text-dark;
+		$body-tertiary-bg-dark:     $tertiary-colour-bg-dark;
+	}
+	@else {
+		$body-secondary-bg: darken($body-bg, 6);
+		$body-tertiary-bg:  darken($body-bg, 3);
+		$body-secondary-bg-dark: lighten($body-bg-dark, 6);
+		$body-tertiary-bg-dark:  lighten($body-bg-dark, 3);
+	}
+}
+
 
 @if $bs_colors == '1' {
 	$primary:      $colour-primary;
@@ -16,34 +37,11 @@ $body-bg-dark:		$colour-background-dark;
 	$dark:         $colour-dark;
 }
 
-@if $det_colors == '1' {
-	$body-secondary-color:      $secondary-colour-text-light;
-	$body-secondary-bg:         $secondary-colour-bg-light;
-	$body-secondary-color-dark: $secondary-colour-text-dark;
-	$body-secondary-bg-dark:    $secondary-colour-bg-dark;
-	
-	$body-tertiary-color:       $tertiary-colour-text-light;
-	$body-tertiary-bg:          $tertiary-colour-bg-light;
-	$body-tertiary-color-dark:  $tertiary-colour-text-dark;
-	$body-tertiary-bg-dark:     $tertiary-colour-bg-dark;
-}
-@else {
-	$body-secondary-bg: darken($body-bg, 6);
-	$body-tertiary-bg:  darken($body-bg, 3);
-	$body-secondary-bg-dark: lighten($body-bg-dark, 6);
-	$body-tertiary-bg-dark:  lighten($body-bg-dark, 3);
-}
-
-
 //
 //
-//$body-emphasis-color:       $black !default;
-//
-//$border-color:          $gray-300 !default;
-//
-//$link-color:                         $primary !default;
-//
-//
+//$body-emphasis-color:       		  $black !default;
+//$border-color:          			  $gray-300 !default;
+//$link-color:                        $primary !default;
 
 //$body-emphasis-color-dark:          $white !default;
 //$border-color-dark:                 $gray-700 !default;

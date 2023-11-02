@@ -60,6 +60,7 @@ $border-color:                rgba(darken($body-bg, 50%), .1) !default;
 $border-radius-pill:          50rem !default;
 
 $box-shadow:                  5px 5px 10px rgba(darken($body-bg, 50%), .2), -5px -5px 10px rgba($white, .4) !default;
+$box-shadow-dark:             5px 5px 10px rgba(lighten($body-bg, 50%), .2), -5px -5px 10px rgba($black, .4) !default;
 $box-shadow-sm:               0 .125rem .25rem rgba(darken($body-bg, 50%), .2) !default;
 $box-shadow-lg:               8px 8px 40px rgba(darken($body-bg, 90%), .15) !default;
 $box-shadow-inset:            inset 2px 2px 8px rgba(darken($body-bg, 50%), .3), inset -3px -2px 5px rgba($white, .8) !default;

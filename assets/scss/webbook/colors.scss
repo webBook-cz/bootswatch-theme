@@ -1,53 +1,8 @@
-// Overriding Bootstrap colors
-
-@if $main_colors == '1' {
-	$body-color:   		$colour-text-light;
-	$body-color-dark:	$colour-text-dark;
-	$body-bg: 			$body-bg;
-	$body-bg-dark:		$body-bg-dark;
-
-	@if $det_colors == '1' {
-		$body-secondary-color:      $secondary-colour-text-light;
-		$body-secondary-bg:         $secondary-colour-bg-light;
-		$body-secondary-color-dark: $secondary-colour-text-dark;
-		$body-secondary-bg-dark:    $secondary-colour-bg-dark;
-		
-		$body-tertiary-color:       $tertiary-colour-text-light;
-		$body-tertiary-bg:          $tertiary-colour-bg-light;
-		$body-tertiary-color-dark:  $tertiary-colour-text-dark;
-		$body-tertiary-bg-dark:     $tertiary-colour-bg-dark;
-	}
-	@else {
-		$body-secondary-bg: darken($body-bg, 6);
-		$body-tertiary-bg:  darken($body-bg, 3);
-		$body-secondary-bg-dark: lighten($body-bg-dark, 6);
-		$body-tertiary-bg-dark:  lighten($body-bg-dark, 3);
-	}
+@if not ($ow_colors == 'none') {
+    @import "main-colors";
 }
 
-
-@if $bs_colors == '1' {
-	$primary:      $colour-primary;
-	$secondary:    $colour-secondary;
-	$success:      $colour-success;
-	$info:         $colour-info;
-	$warning:      $colour-warning;
-	$danger:       $colour-danger;
-	$light:        $colour-light;
-	$dark:         $colour-dark;
+@if ($bs_colors == 1) {
+    @import "bs-colors";
 }
-
-//
-//
-//$body-emphasis-color:       		  $black !default;
-//$border-color:          			  $gray-300 !default;
-//$link-color:                        $primary !default;
-
-//$body-emphasis-color-dark:          $white !default;
-//$border-color-dark:                 $gray-700 !default;
-//$border-color-translucent-dark:     rgba($white, .15) !default;
-//$headings-color-dark:               inherit !default;
-//$link-color-dark:                   tint-color($primary, 40%) !default;
-//$link-hover-color-dark:             shift-color($link-color-dark, -$link-shade-percentage) !default;
-//$code-color-dark:                   tint-color($code-color, 40%) !default;
 

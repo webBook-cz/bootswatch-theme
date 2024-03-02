@@ -2,7 +2,7 @@
 @if $ow_fonts == 1 {
   @import "../../webbook/fonts";
 }
-@if $ow_colors == 1 {
+@if ($ow_colors == 1 or not ($ow_colors == 'none')) {
   @import "../../webbook/colors";
 }
 @import "../../bootstrap/bootstrap";

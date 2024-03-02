@@ -156,6 +156,14 @@ $container-max-widths: (
 // loading Bootstrap styles
 //@import "bootstrap/bootstrap";
 
+@if not ($ow_colors == 'none') {
+    @import "webbook/main-colors";
+}
+
+@if ($bs_colors == 1) {
+    @import "webbook/bs-colors";
+}
+
 @import "bootswatch";
 
 // Adding custom styling

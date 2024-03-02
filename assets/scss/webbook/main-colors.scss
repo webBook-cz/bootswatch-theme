@@ -1,0 +1,45 @@
+@if str-index($ow_colors, 'primary') {
+
+    $body-color:        $primary-colour-text-light;
+    $body-bg:           $primary-colour-bg-light;
+    $body-color-dark:   $primary-colour-text-dark;
+    $body-bg-dark:      $primary-colour-bg-dark;
+}
+
+@if str-index($ow_colors, 'secondary') {
+
+    $body-secondary-color:      $secondary-colour-text-light;
+    $body-secondary-bg:         $secondary-colour-bg-light;
+    $body-secondary-color-dark: $secondary-colour-text-dark;
+    $body-secondary-bg-dark:    $secondary-colour-bg-dark;
+
+}
+
+@if str-index($ow_colors, 'tertiary') {
+
+    $body-tertiary-color:       $tertiary-colour-text-light;
+    $body-tertiary-bg:          $tertiary-colour-bg-light;
+    $body-tertiary-color-dark:  $tertiary-colour-text-dark;
+    $body-tertiary-bg-dark:     $tertiary-colour-bg-dark;
+}
+
+@if ($ow_colors == 'primary') {
+
+    $body-secondary-color:      mix(white, $body-color, 5%);
+    $body-secondary-bg:         mix(black, $body-bg, 10%);
+    $body-secondary-color-dark: mix(black, $body-color-dark, 5%);
+    $body-secondary-bg-dark:    mix(white, $body-bg-dark, 10%);
+
+    $body-tertiary-color:       mix(white, $body-color, 10%);
+    $body-tertiary-bg:          mix(black, $body-bg, 5%);
+    $body-tertiary-color-dark:  mix(black, $body-color-dark, 10%);
+    $body-tertiary-bg-dark:     mix(white, $body-bg-dark, 5%);
+}
+
+@if ($ow_colors == 'primarysecondary') {
+
+    $body-tertiary-color:       mix(white, $body-color, 10%);
+    $body-tertiary-bg:          mix(black, $body-bg, 5%);
+    $body-tertiary-color-dark:  mix(black, $body-color-dark, 10%);
+    $body-tertiary-bg-dark:     mix(white, $body-bg-dark, 5%);
+}

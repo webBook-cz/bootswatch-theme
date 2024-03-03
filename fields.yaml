@@ -492,7 +492,7 @@ tabs:
             label: Text Colour Light
             tab: Colours
             type: colorpicker
-            default: 'rgba(33, 37, 41, 0.75)'
+            default: '#212529bf'
             availableColors: ['#080808', '#101010','#181818', '#202020', '#282828', '#303030', '#383838','#404040','#484848','#505050','#585858','#606060','#686868','#707070','#787878','#808080']
             showAlpha: true
             assetVar: 'secondary-colour-text-light'
@@ -507,7 +507,7 @@ tabs:
             label: Text Colour Dark
             tab: Colours
             type: colorpicker
-            default: 'rgba(222, 226, 230, 0.75)'
+            default: '#dee2e680'
             availableColors: ['#808080', '#888888', '#909090', '#989898', '#A0A0A0', '#A8A8A8 ', '#B0B0B0', '#B8B8B8', '#C0C0C0', '#C8C8C8', '#D0D0D0', '#D8D8D8', '#E0E0E0', '#E8E8E8', '#F0F0F0', '#F8F8F8']
             showAlpha: true
             assetVar: 'secondary-colour-text-dark'
@@ -562,7 +562,7 @@ tabs:
             label: Text Colour Light
             tab: Colours
             type: colorpicker
-            default: 'rgba(33, 37, 41, 0.5)'
+            default: '#21252980'
             availableColors: ['#080808', '#101010','#181818', '#202020', '#282828', '#303030', '#383838','#404040','#484848','#505050','#585858','#606060','#686868','#707070','#787878','#808080']
             showAlpha: true
             assetVar: 'tertiary-colour-text-light'
@@ -577,7 +577,7 @@ tabs:
             label: Text Colour Dark
             tab: Colours
             type: colorpicker
-            default: 'rgba(222, 226, 230, 0.5)'
+            default: '#dee2e680'
             availableColors: ['#808080', '#888888', '#909090', '#989898', '#A0A0A0', '#A8A8A8 ', '#B0B0B0', '#B8B8B8', '#C0C0C0', '#C8C8C8', '#D0D0D0', '#D8D8D8', '#E0E0E0', '#E8E8E8', '#F0F0F0', '#F8F8F8']
             showAlpha: true
             assetVar: 'tertiary-colour-text-dark'
